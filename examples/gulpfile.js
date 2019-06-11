@@ -12,27 +12,48 @@
 	Configure Options & Files 
 =============================
 */
-    var File_Name = 'gulp-quick.zip';
+    var File_Name = 'html-mingo.zip';
     var CSS_Files = [
         './bower_components/bootstrap/dist/css/bootstrap.min.css',
         './assets/css/responsive-menu.css',
-
+        './assets/css/lightbox.min.css',
+        './assets/css/fontawesome-all.min.css',
+        './bower_components/owl.carousel/dist/assets/owl.carousel.min.css',
+        './bower_components/aos/dist/aos.css'
     ];
     var JS_Files = [
         './bower_components/jquery/dist/jquery.js',
         './bower_components/bootstrap/dist/js/bootstrap.min.js',
-         './assets/js/app.js'
+        './assets/js/responsive-menu.js',
+        './bower_components/scrollup/dist/jquery.scrollUp.min.js',
+        './assets/js/lightbox.min.js',
+        './assets/js/fontawesome.min.js',
+        './assets/js/isotope.pkgd.min.js',
+        './bower_components/aos/dist/aos.js',
+        './bower_components/owl.carousel/dist/owl.carousel.min.js',
+        './assets/js/app.js'
     ];
 	
     var Production_CSS_Files = [
         './dist/production/assets/css/bootstrap.min.css',
         './dist/production/assets/css/responsive-menu.css',
+        './dist/production/assets/css/lightbox.min.css',
+        './dist/production/assets/css/fontawesome-all.min.css',
+        './dist/production/assets/css/owl.carousel.min.css',
+        './dist/production/assets/css/aos.css',
         './dist/production/assets/css/style.css',
     ];	
 	
     var Production_JS_Files = [
         './dist/production/assets/js/jquery.js',
         './dist/production/assets/js/bootstrap.min.js',
+        './dist/production/assets/js/responsive-menu.js',
+        './dist/production/assets/js/jquery.scrollUp.min.js',
+        './dist/production/assets/js/lightbox.min.js',
+        './dist/production/assets/js/fontawesome.min.js',
+        './dist/production/assets/js/isotope.pkgd.min.js',
+        './dist/production/assets/js/aos.js',
+        './dist/production/assets/js/owl.carousel.min.js',
         './dist/production/assets/js/app.js'
     ];	
 /*
