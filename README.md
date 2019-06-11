@@ -1,4 +1,4 @@
-# gulp-quickstart-pack
+# Gulp Quick Start Pack
 gulp-quickstart-pack for all developers
 
 >  A modern Web starter kit for projects
