@@ -1,4 +1,5 @@
 /*!
+ * Version 1.0.1
  * Themeix Gulp Package (https://themeix.com/)
  * Copyright 2016-2019 themeix team
  * Licensed under MIT
@@ -12,27 +13,48 @@
 	Configure Options & Files 
 =============================
 */
-    var File_Name = 'gulp-quick.zip';
+    var File_Name = 'html-mingo.zip';
     var CSS_Files = [
         './bower_components/bootstrap/dist/css/bootstrap.min.css',
         './assets/css/responsive-menu.css',
-
+        './assets/css/lightbox.min.css',
+        './assets/css/fontawesome-all.min.css',
+        './bower_components/owl.carousel/dist/assets/owl.carousel.min.css',
+        './bower_components/aos/dist/aos.css'
     ];
     var JS_Files = [
         './bower_components/jquery/dist/jquery.js',
         './bower_components/bootstrap/dist/js/bootstrap.min.js',
-         './assets/js/app.js'
+        './assets/js/responsive-menu.js',
+        './bower_components/scrollup/dist/jquery.scrollUp.min.js',
+        './assets/js/lightbox.min.js',
+        './assets/js/fontawesome.min.js',
+        './assets/js/isotope.pkgd.min.js',
+        './bower_components/aos/dist/aos.js',
+        './bower_components/owl.carousel/dist/owl.carousel.min.js',
+        './assets/js/app.js'
     ];
 	
     var Production_CSS_Files = [
         './dist/production/assets/css/bootstrap.min.css',
         './dist/production/assets/css/responsive-menu.css',
+        './dist/production/assets/css/lightbox.min.css',
+        './dist/production/assets/css/fontawesome-all.min.css',
+        './dist/production/assets/css/owl.carousel.min.css',
+        './dist/production/assets/css/aos.css',
         './dist/production/assets/css/style.css',
     ];	
 	
     var Production_JS_Files = [
         './dist/production/assets/js/jquery.js',
+		'./dist/production/assets/js/owl.carousel.min.js',
         './dist/production/assets/js/bootstrap.min.js',
+        './dist/production/assets/js/responsive-menu.js',
+        './dist/production/assets/js/jquery.scrollUp.min.js',
+        './dist/production/assets/js/lightbox.min.js',
+        './dist/production/assets/js/fontawesome.min.js',
+        './dist/production/assets/js/isotope.pkgd.min.js',
+        './dist/production/assets/js/aos.js',
         './dist/production/assets/js/app.js'
     ];	
 /*
@@ -94,10 +116,15 @@
     gulp.task('copy_all_files', function(done) {
         return gulp.src([
                 './**/*',
-                '.editorconfig',
-                '.jshintignore',
-                '.jshintrc',
+                '!.editorconfig',
+                '!.jshintignore',
+                '!.jshintrc',
+                '!bower.json',
+                '!gulpfile.js',
+                '!package.json',
+                '!package-lock.json',
                 '!.gitattributes',
+                '!gitignore',
                 '!README.md',
                 '!.gitignore',
                 '!./node_modules/**',
@@ -141,6 +168,7 @@
     gulp.task('production-zip', function(done) {
         gulp.src([
                 './dist/production/**/*',
+
             ])
             .pipe(zip('production-' + File_Name))
             .pipe(gulp.dest('./dist/'))
@@ -205,28 +233,6 @@
             .pipe(size())
         done();
     });
-
-    gulp.task('watch', function() {
-        gulp.watch('assets/scss/**/*.scss', gulp.series('build_css'));
-        gulp.watch(['./assets/js/app.js'], gulp.series('js'));
-    });
-
-    gulp.task(
-        'build_css',
-        gulp.series('sass', 'vendor_css', 'app_css')
-    );
-
-    gulp.task(
-        'build',
-        gulp.series('build_css', 'js')
-    );
-
-    gulp.task(
-        'production',
-        gulp.series('clean-production', 'copy_all_files', 'copy_css_files', 'copy_js_files', 'inject_code_html', 'inject_code_html_2', 'remove_extra_code', 'production-zip')
-    );
-
- 
     gulp.task('zip', function(done) {
         gulp.src([
                 './**/*',
@@ -246,6 +252,28 @@
             .pipe(size())
         done();
     });
+
+    gulp.task('watch', function() {
+        gulp.watch('assets/scss/**/*.scss', gulp.series('build_css'));
+        gulp.watch(['./assets/js/app.js'], gulp.series('js'));
+    });
+
+    gulp.task(
+        'build_css',
+        gulp.series('sass', 'vendor_css', 'app_css')
+    );
+
+    gulp.task(
+        'build',
+        gulp.series('build_css', 'js')
+    );
+
+    gulp.task(
+        'production',
+        gulp.series('clean-production', 'copy_all_files', 'copy_css_files', 'copy_js_files', 'inject_code_html', 'inject_code_html_2', 'remove_extra_code', 'production-zip', 'zip')
+    );
+
+ 
 
     gulp.task(
         'default',
