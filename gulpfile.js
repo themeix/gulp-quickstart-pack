@@ -1,5 +1,4 @@
 /*!
- * Version 1.0.1
  * Themeix Gulp Package (https://themeix.com/)
  * Copyright 2016-2019 themeix team
  * Licensed under MIT
@@ -13,49 +12,55 @@
 	Configure Options & Files 
 =============================
 */
-    var File_Name = 'html-mingo.zip';
+    var File_Name = 'html-protea.zip';
     var CSS_Files = [
-        './bower_components/bootstrap/dist/css/bootstrap.min.css',
-        './assets/css/responsive-menu.css',
-        './assets/css/lightbox.min.css',
-        './assets/css/fontawesome-all.min.css',
-        './bower_components/owl.carousel/dist/assets/owl.carousel.min.css',
-        './bower_components/aos/dist/aos.css'
+      
+	'./assets/css/bootstrap.min.css',	
+	'./assets/css/owl.carousel.min.css',
+	'./assets/css/aos.css',
+	'./assets/css/prism.css',
+	'./assets/css/lightbox.min.css',
+	'./assets/css/icofont.min.css',
+	'./assets/css/slimmenu-menu.css'
+		
     ];
     var JS_Files = [
-        './bower_components/jquery/dist/jquery.js',
-        './bower_components/bootstrap/dist/js/bootstrap.min.js',
-        './assets/js/responsive-menu.js',
-        './bower_components/scrollup/dist/jquery.scrollUp.min.js',
-        './assets/js/lightbox.min.js',
-        './assets/js/fontawesome.min.js',
-        './assets/js/isotope.pkgd.min.js',
-        './bower_components/aos/dist/aos.js',
-        './bower_components/owl.carousel/dist/owl.carousel.min.js',
-        './assets/js/app.js'
+	'./assets/js/jquery.min.js',
+	'./assets/js/bootstrap.min.js',
+	'./assets/js/owl.carousel.min.js',
+	'./assets/js/aos.js',
+	'./assets/js/jquery.fitvids.js',
+	'./assets/js/prism.js',
+	'./assets/js/jquery.scrollUp.min.js',
+	'./assets/js/infinite-scroll.pkgd.min.js',
+	'./assets/js/slimmenu-menu.js',
+	'./assets/js/app.js'
     ];
 	
     var Production_CSS_Files = [
-        './dist/production/assets/css/bootstrap.min.css',
-        './dist/production/assets/css/responsive-menu.css',
-        './dist/production/assets/css/lightbox.min.css',
-        './dist/production/assets/css/fontawesome-all.min.css',
-        './dist/production/assets/css/owl.carousel.min.css',
-        './dist/production/assets/css/aos.css',
-        './dist/production/assets/css/style.css',
+	'./dist/production/assets/css/bootstrap.min.css',	
+	'./dist/production/assets/css/owl.carousel.min.css',
+	'./dist/production/assets/css/aos.css',
+	'./dist/production/assets/css/prism.css',
+	'./dist/production/assets/css/lightbox.min.css',
+	'./dist/production/assets/css/icofont.min.css',
+	'./dist/production/assets/css/slimmenu-menu.css',
+	'./dist/production/assets/css/style.min.css'
     ];	
 	
     var Production_JS_Files = [
-        './dist/production/assets/js/jquery.js',
-		'./dist/production/assets/js/owl.carousel.min.js',
-        './dist/production/assets/js/bootstrap.min.js',
-        './dist/production/assets/js/responsive-menu.js',
-        './dist/production/assets/js/jquery.scrollUp.min.js',
-        './dist/production/assets/js/lightbox.min.js',
-        './dist/production/assets/js/fontawesome.min.js',
-        './dist/production/assets/js/isotope.pkgd.min.js',
-        './dist/production/assets/js/aos.js',
-        './dist/production/assets/js/app.js'
+	'./dist/production/assets/js/jquery.min.js',
+	'./dist/production/assets/js/bootstrap.min.js',
+	'./dist/production/assets/js/owl.carousel.min.js',
+	'./dist/production/assets/js/aos.js',
+	'./dist/production/assets/js/jquery.fitvids.js',
+	'./dist/production/assets/js/infinite-scroll.pkgd.min.js',
+	'./dist/production/assets/js/jquery.scrollUp.min.js',
+	'./dist/production/assets/js/lightbox.min.js',
+	'./dist/production/assets/js/prism.js',
+	'./dist/production/assets/js/slimmenu-menu.js',
+	'./dist/production/assets/js/app.js'	
+ 
     ];	
 /*
 =============================
@@ -63,10 +68,11 @@
 =============================
 */
 	var gulp 			= require('gulp'),
+
 		sass 			= require('gulp-sass'),
 		cleanCSS 		= require('gulp-clean-css'),
 		autoprefixer 	= require('gulp-autoprefixer'),
-		concat 			= require('gulp-concat'),
+		concat 			= require('gulp-concat'),		
 		rename 			= require('gulp-rename'),
 		uglify 			= require('gulp-uglify'),
 		terser 			= require('gulp-terser'),
@@ -79,22 +85,15 @@
 		del 			= require('del'),
 		gulpCopy 		= require('gulp-copy'),
 		runSequence 	= require('run-sequence'),
-		inject 			= require('gulp-inject'),
-		fs 				= require('fs');
-
+		inject 			= require('gulp-inject')
+//		fs 				= require('fs');
+		
 		sass.compiler = require('node-sass');
 			
-    var onError = function(err) {
-		console.log('An error occurred:', c.red(err.message));
-        this.emit('end');
-    };
-	gulp.task('t', function(){
-  gulp.src(['file.txt'])
-    .pipe(replace('bar', 'foo'))
-    .pipe(gulp.dest('build/'));
-});
+  
+ 
     gulp.task('clean-production', function() {
-        return del('dist/production/**', {
+        return del('dist/**/**', {
             force: true
         });
     });
@@ -168,7 +167,6 @@
     gulp.task('production-zip', function(done) {
         gulp.src([
                 './dist/production/**/*',
-
             ])
             .pipe(zip('production-' + File_Name))
             .pipe(gulp.dest('./dist/'))
@@ -179,7 +177,7 @@
     gulp.task('sass', function(done) {
         return gulp.src('./assets/scss/*.scss')
             .pipe(plumber({
-                errorHandler: onError
+               // errorHandler: onError
             }))
             .pipe(sass())
             .pipe(autoprefixer())
