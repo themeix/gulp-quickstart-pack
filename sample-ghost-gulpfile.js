@@ -67,7 +67,7 @@ var gulp 			= require('gulp'),
   runSequence 	= require('run-sequence'),
   inject 			= require('gulp-inject')
   
-  sass.compiler = require('gulp-sass');
+  sass.compiler = require('node-sass');
       
 // Start server
 gulp.task('serve', function (done) {
