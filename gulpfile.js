@@ -88,7 +88,7 @@
 		inject 			= require('gulp-inject')
 //		fs 				= require('fs');
 		
-		sass.compiler = require('gulp-sass');
+		sass.compiler = require('node-sass');
 			
   
  
