@@ -26,6 +26,9 @@
 		"url": "https://github.com/themeix/gulp-quickstart-pack/issues"
 	},
 	"dependencies": {
+		"gulp": "^4.0.2"
+	},  
+		"devDependencies": {
 		"gulp": "^4.0.2",
 		"concat": "^3.0.0",
 		"gulp-autoprefixer": "^7.0.1",
@@ -50,9 +53,6 @@
 		"gulp-string-replace": "^1.1.2",
 		"gulp-inject": "^5.0.4",
 		"del": "^5.1.0"
-	},
-	"devDependencies": {
-		"gulp": "^4.0.0",
 	},
 	"license": "MIT"
 }
