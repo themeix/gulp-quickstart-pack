@@ -4,9 +4,8 @@
 	"description": "Write the theme description",
 
 	"scripts": {
-		"postinstall": "bower install",
 		"dev": "gulp production",
-		"zip": "gulp zip"
+		"zip": "gulp zip"	
 	},
 	"repository": {
 		"type": "git",
@@ -17,6 +16,7 @@
 		"email": "support@themeix.com",
 		"url": "https://themeix.com"
 	},
+ 	"license": "MIT", 
 	"keywords": [
 		"starter",
 		"template",
@@ -34,7 +34,6 @@
 		"gulp-autoprefixer": "^7.0.1",
 		"gulp-clean-css": "^4.2.0",
 		"gulp-concat": "^2.6.1",
-		"fs": "0.0.2",
 		"gulp-jshint": "^2.1.0",
 		"gulp-plumber": "^1.2.1",
 		"gulp-rename": "^1.4.0",
@@ -53,6 +52,5 @@
 		"gulp-string-replace": "^1.1.2",
 		"gulp-inject": "^5.0.4",
 		"del": "^5.1.0"
-	},
-	"license": "MIT"
+	}
 }
