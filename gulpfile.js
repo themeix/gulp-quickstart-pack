@@ -88,8 +88,14 @@
 		inject 			= require('gulp-inject')
 //		fs 				= require('fs');
 		
-		sass.compiler = require('node-sass');
+		sass.compiler = require('gulp-sass');
 			
+   // Cleaning 
+  gulp.task('clean-production', function() {
+     return del('dist', {
+          force: true
+      });
+  });
   
  
     gulp.task('clean-production', function() {
@@ -97,6 +103,7 @@
             force: true
         });
     });
+  
     gulp.task('copy_css_files', function(done) {
         return gulp.src(CSS_Files)
             .pipe(gulp.dest('./dist/production/assets/css'))
