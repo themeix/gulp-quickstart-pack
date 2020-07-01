@@ -1,9 +1,8 @@
 {
-	"name": "mingo",
-	"version": "1.0.0",
-	"description": "HTML Site Template",
+	"name": "gulp-quickstart-pack",
+	"version": "1.1.0",
+	"description": "Write the theme description",
 	"scripts": {
-		"postinstall": "bower install",
 		"dev": "gulp production",
 		"zip": "gulp zip"
 	},
@@ -16,6 +15,7 @@
 		"email": "support@themeix.com",
 		"url": "https://themeix.com"
 	},
+	"license": "MIT",
 	"keywords": [
 		"starter",
 		"template",
@@ -25,32 +25,32 @@
 		"url": "https://github.com/themeix/gulp-quickstart-pack/issues"
 	},
 	"dependencies": {
-		"concat": "^3.0.0",
-		"fs": "0.0.2",
-		"gulp-autoprefixer": "^6.1.0",
-		"gulp-clean-css": "^4.2.0",
-		"gulp-concat": "^2.6.1",
-		"gulp-jshint": "^2.1.0",
-		"gulp-plumber": "^1.2.1",
-		"gulp-rename": "^1.4.0",
-		"gulp-replace": "^1.0.0",
-		"gulp-sass": "^4.0.2",
-		"gulp-size": "^3.0.0",
-		"gulp-zip": "^5.0.0",
-		"gulp-uglify": "^3.0.2",
-		"gulp-terser": "^1.2.0",
-		"ansi-colors": "^3.2.4",
-		"jshint": "^2.10.2",
-		"jshint-stylish": "^2.2.1",
-		"run-sequence": "^2.2.1",
-		"gulp-copy": "^4.0.1",
-		"gulp-string-replace": "^1.1.2",
-		"gulp-inject": "^5.0.2",
-		"del": "^4.1.1"
+		"jquery": "^3.5.1",
+		"bootstrap": "^4.5.0"
 	},
 	"devDependencies": {
-		"gulp": "^4.0.0",
-		"node-sass": "^4.10.0"
-	},
-	"license": "MIT"
+		"gulp": "^4.0.2",	
+		"ansi-colors": "^4.1.1",
+		"concat": "^3.0.0",
+		"del": "^5.1.0",
+		"gulp-autoprefixer": "^7.0.1",
+		"gulp-clean-css": "^4.3.0",
+		"gulp-concat": "^2.6.1",
+		"gulp-copy": "^4.0.1",
+		"gulp-inject": "^5.0.5",
+		"gulp-jshint": "^2.1.0",
+		"gulp-livereload": "^4.0.2",
+		"gulp-plumber": "^1.2.1",
+		"gulp-rename": "^2.0.0",
+		"gulp-replace": "^1.0.0",
+		"gulp-sass": "^4.1.0",
+		"gulp-size": "^3.0.0",
+		"gulp-string-replace": "^1.1.2",
+		"gulp-terser": "^1.2.0",
+		"gulp-uglify": "^3.0.2",
+		"gulp-zip": "^5.0.2",
+		"jshint": "^2.11.1",
+		"jshint-stylish": "^2.2.1",
+		"run-sequence": "^2.2.1"
+	}
 }
