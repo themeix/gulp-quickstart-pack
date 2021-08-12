@@ -12,53 +12,26 @@
 	Configure Options & Files 
 =============================
 */
-    var File_Name = 'html-protea.zip';
+    var File_Name = 'html-name.zip';
     var CSS_Files = [
       
-	'./assets/css/bootstrap.min.css',	
-	'./assets/css/owl.carousel.min.css',
-	'./assets/css/aos.css',
-	'./assets/css/prism.css',
-	'./assets/css/lightbox.min.css',
-	'./assets/css/icofont.min.css',
-	'./assets/css/slimmenu-menu.css'
+	'./assets/css/bootstrap.min.css
 		
     ];
     var JS_Files = [
 	'./assets/js/jquery.min.js',
-	'./assets/js/bootstrap.min.js',
-	'./assets/js/owl.carousel.min.js',
-	'./assets/js/aos.js',
-	'./assets/js/jquery.fitvids.js',
-	'./assets/js/prism.js',
-	'./assets/js/jquery.scrollUp.min.js',
-	'./assets/js/infinite-scroll.pkgd.min.js',
-	'./assets/js/slimmenu-menu.js',
+	'./assets/js/bootstrap.min.js'
 	'./assets/js/app.js'
     ];
 	
     var Production_CSS_Files = [
-	'./dist/production/assets/css/bootstrap.min.css',	
-	'./dist/production/assets/css/owl.carousel.min.css',
-	'./dist/production/assets/css/aos.css',
-	'./dist/production/assets/css/prism.css',
-	'./dist/production/assets/css/lightbox.min.css',
-	'./dist/production/assets/css/icofont.min.css',
-	'./dist/production/assets/css/slimmenu-menu.css',
+	'./dist/production/assets/css/bootstrap.min.css',
 	'./dist/production/assets/css/style.min.css'
     ];	
 	
     var Production_JS_Files = [
 	'./dist/production/assets/js/jquery.min.js',
 	'./dist/production/assets/js/bootstrap.min.js',
-	'./dist/production/assets/js/owl.carousel.min.js',
-	'./dist/production/assets/js/aos.js',
-	'./dist/production/assets/js/jquery.fitvids.js',
-	'./dist/production/assets/js/infinite-scroll.pkgd.min.js',
-	'./dist/production/assets/js/jquery.scrollUp.min.js',
-	'./dist/production/assets/js/lightbox.min.js',
-	'./dist/production/assets/js/prism.js',
-	'./dist/production/assets/js/slimmenu-menu.js',
 	'./dist/production/assets/js/app.js'	
  
     ];	
@@ -69,7 +42,8 @@
 */
 	var gulp 			= require('gulp'),
 
-		sass 			= require('gulp-sass'),
+	var gulp 			= require('gulp'),
+		sass 			= require('gulp-sass')(require('sass')),
 		cleanCSS 		= require('gulp-clean-css'),
 		autoprefixer 	= require('gulp-autoprefixer'),
 		concat 			= require('gulp-concat'),		
@@ -86,10 +60,6 @@
 		gulpCopy 		= require('gulp-copy'),
 		runSequence 	= require('run-sequence'),
 		inject 			= require('gulp-inject')
-//		fs 				= require('fs');
-		
-		sass.compiler = require('node-sass');
-			
   
  
     gulp.task('clean-production', function() {
@@ -115,7 +85,6 @@
     gulp.task('copy_all_files', function(done) {
         return gulp.src([
                 './**/*',
-                '!.editorconfig',
                 '!.jshintignore',
                 '!.jshintrc',
                 '!bower.json',
@@ -234,7 +203,6 @@
     gulp.task('zip', function(done) {
         gulp.src([
                 './**/*',
-                '.editorconfig',
                 '.jshintignore',
                 '.jshintrc',
                 '!.gitattributes',
