@@ -12,31 +12,14 @@
 Configure Options & Files 
 =============================
 */
-  var File_Name = 'ghost-themename.zip';
+  var File_Name = 'ghost-theme.zip';
 
   var CSS_Files = [
-      './assets/css/normalize.css',
-      './assets/css/bootstrap.min.css',
-	  './assets/css/owl.carousel.min.css',
-      './assets/css/animate.min.css',
-       './assets/css/font-awesome.min.css',
-       './assets/css/a11y-light.css',
-       './assets/css/pre-loder.css',
-       './assets/css/style-switcher.css'
+ 	'./node_modules/jquery/dist/css/bootstrap.min.css'   
       
   ];
   var JS_Files = [
-       './assets/js/jquery-3.4.1.min.js',
-      './assets/js/bootstrap.min.js',
-      './assets/js/owl.carousel.min.js',
-      './assets/js/animatedModal.min.js',
-      './assets/js/menumaker.min.js',
-      './assets/js/switcher.js',
-      './assets/js/highlight.pack.js',
-      './assets/js/ghost-search.min.js',
-      './assets/js/popper.min.js',
-      './assets/js/wow.min.js',
-      './assets/js/content-api.min.js',
+	    './node_modules/jquery/dist/jquery.min.js',
       './assets/js/app.js'
   ];
 
@@ -46,28 +29,24 @@ Configure Options & Files
 Include Gulp & Plugins
 =============================
 */
-var gulp 			= require('gulp'),
-
-  sass 			= require('gulp-sass'),
-  cleanCSS 		= require('gulp-clean-css'),
-  autoprefixer 	= require('gulp-autoprefixer'),
-  concat 			= require('gulp-concat'),		
-  rename 			= require('gulp-rename'),
-  uglify 			= require('gulp-uglify'),
-  terser 			= require('gulp-terser'),
-  jshint 			= require('gulp-jshint'),
-  plumber			= require('gulp-plumber'),
-  c 				= require('ansi-colors'),
-  replace 		= require('gulp-replace'),
-  size 			= require('gulp-size'),
-  livereload   = require('gulp-livereload'),
-  zip 			= require('gulp-zip'),
-  del 			= require('del'),
-  gulpCopy 		= require('gulp-copy'),
-  runSequence 	= require('run-sequence'),
-  inject 			= require('gulp-inject')
-  
-  sass.compiler = require('node-sass');
+	var gulp 			= require('gulp'),
+		sass 			= require('gulp-sass')(require('sass')),
+		cleanCSS 		= require('gulp-clean-css'),
+		autoprefixer 	= require('gulp-autoprefixer'),
+		concat 			= require('gulp-concat'),		
+		rename 			= require('gulp-rename'),
+		uglify 			= require('gulp-uglify'),
+		terser 			= require('gulp-terser'),
+		jshint 			= require('gulp-jshint'),
+		plumber			= require('gulp-plumber'),
+		c 				= require('ansi-colors'),
+		replace 		= require('gulp-replace'),
+		size 			= require('gulp-size'),
+		zip 			= require('gulp-zip'),
+		del 			= require('del'),
+		gulpCopy 		= require('gulp-copy'),
+		runSequence 	= require('run-sequence'),
+		inject 			= require('gulp-inject')
       
 // Start server
 gulp.task('serve', function (done) {
@@ -170,7 +149,7 @@ gulp.task('watch', function() {
   gulp.task('zip', function(done) {
       gulp.src([
               './**/*',
-              '.editorconfig',
+         
               '.jshintignore',
               '.jshintrc',
               '!.gitattributes',
@@ -207,7 +186,7 @@ gulp.task('watch', function() {
   gulp.task('copy_all_files', function(done) {
       return gulp.src([
               './**/*',
-              '!.editorconfig',
+          
               '!.jshintignore',
               '!.jshintrc',
               '!package-lock.json',
