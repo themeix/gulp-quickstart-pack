@@ -1,6 +1,6 @@
 {
 	"name": "gulp-quickstart-pack",
-	"version": "1.2.0",
+	"version": "1.3.0",
 	"description": "Write the theme description",
 	"scripts": {
 		"dev": "gulp production",
@@ -53,6 +53,8 @@
     "gulp-zip": "^5.0.2",
     "jshint": "^2.13.1",
     "jshint-stylish": "^2.2.1",
-    "run-sequence": "^2.2.1"
-	}
+     "run-sequence": "^2.2.1"
+  },
+  "homepage": "https://github.com/themeix/gulp-quickstart-pack#readme",
+  "main": "gulpfile.js"
 }
