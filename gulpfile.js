@@ -41,8 +41,6 @@
 =============================
 */
 	var gulp 			= require('gulp'),
-
-	var gulp 			= require('gulp'),
 		sass 			= require('gulp-sass')(require('sass')),
 		cleanCSS 		= require('gulp-clean-css'),
 		autoprefixer 	= require('gulp-autoprefixer'),
